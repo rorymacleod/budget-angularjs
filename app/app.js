@@ -4,6 +4,7 @@
 angular.module("budgetApp", [
     "ngMaterial",
     "ngRoute",
+    "budgetApp.month",
     "budgetApp.view1",
     "budgetApp.view2",
     "budgetApp.version"
