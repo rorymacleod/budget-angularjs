@@ -1,14 +1,25 @@
-'use strict';
+"use strict";
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-    'ngRoute',
-    'myApp.view1',
-    'myApp.view2',
-    'myApp.version'
+angular.module("budgetApp", [
+    "ngMaterial",
+    "ngRoute",
+    "budgetApp.view1",
+    "budgetApp.view2",
+    "budgetApp.version"
 ]).
-config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-    $locationProvider.hashPrefix('!');
+config([
+    "$locationProvider",
+    "$mdThemingProvider",
+    "$routeProvider",
+    function ($locationProvider, $mdThemingProvider, $routeProvider) {
+        $locationProvider.hashPrefix("!");
 
-    $routeProvider.otherwise({ redirectTo: '/view1' });
-}]);
+        $mdThemingProvider
+            .theme("default")
+            .primaryPalette("green")
+            .accentPalette("cyan");
+
+        $routeProvider.otherwise({ redirectTo: "/view1" });
+    }
+]);
